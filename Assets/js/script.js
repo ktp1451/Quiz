@@ -46,11 +46,10 @@ function displayQuestion() {
         choiceBtn.setAttribute("value", choice)
         //event listener for choiceBtn element and compares answers
         choiceBtn.addEventListener("click", questionClick);
-        });
         choiceBtn.textContent = choice;
         //appends to choices container in HTML
         choices.appendChild(choiceBtn);
-}
+});
 
 //function for event listener above
 function questionClick(e) {
@@ -61,12 +60,11 @@ function questionClick(e) {
     } else {
         console.log("false");
         //tells program to go to the next question
-        coutner++;
+        counter++;
         //
         if(counter === questions.length) {
-            endgame()
-        } else {
-            choices.innerHTML();
+            endgame();
+            return;
         }
         //clears out html inside of choices div
         choices.innerHTML = "";
@@ -104,4 +102,4 @@ function timeDuration() {
 }
 
 //created button click
-startBtn.addEventListener("click", startGame); 
+startBtn.addEventListener("click", startGame);
